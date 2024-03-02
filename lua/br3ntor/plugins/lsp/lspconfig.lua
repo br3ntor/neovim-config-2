@@ -4,8 +4,13 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
+		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
+		require("neodev").setup({
+			-- add any options here, or leave empty to use the default settings
+		})
+
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 
@@ -145,6 +150,9 @@ return {
 			on_attach = on_attach,
 			settings = { -- custom settings for lua
 				Lua = {
+					completion = {
+						callSnippet = "Replace",
+					},
 					-- make the language server recognize "vim" global
 					diagnostics = {
 						globals = { "vim" },

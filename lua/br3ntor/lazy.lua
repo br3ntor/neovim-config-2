@@ -13,15 +13,13 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
---require("lazy").setup({ { import = "br3ntor.plugins" }, { import = "br3ntor.plugins.lsp" } })
-
--- require("lazy").setup(plugins, opts)
 require("lazy").setup({
-	-- Not sure if I need/want this - neodev...synergizes with folke/neoconf?
-	"folke/neodev.nvim",
 	-- Not sure if I want these, look into them later
 	-- { "folke/neoconf.nvim", cmd = "Neoconf" },
 
 	{ import = "br3ntor.plugins" },
 	{ import = "br3ntor.plugins.lsp" },
 })
+
+-- Trying to get the definition annotation to have color, try a diff scheme maybe
+-- vim.api.nvim_create_augroup()
