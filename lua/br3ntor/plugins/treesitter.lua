@@ -27,6 +27,7 @@ return {
 					"dockerfile",
 					"gitignore",
 					"query",
+					"python",
 				},
 
 				sync_install = false,

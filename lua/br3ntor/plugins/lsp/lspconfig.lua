@@ -7,10 +7,6 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
-		require("neodev").setup({
-			-- add any options here, or leave empty to use the default settings
-		})
-
 		-- import lspconfig plugin
 		local lspconfig = require("lspconfig")
 
@@ -142,6 +138,11 @@ return {
 		lspconfig["pyright"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
+			settings = {
+				pyright = {
+					typeCheckingMode = "off",
+				},
+			},
 		})
 
 		-- configure lua server (with special settings)
