@@ -20,3 +20,6 @@ keymap.set("n", "<leader>q", ":bdelete<CR>", {})
 -- These are for bufferline plugin, trying all natural atm
 --vim.keymap.set('n', '<leader>p', ':BufferLineCyclePrev<CR>', {})
 --vim.keymap.set('n', '<leader>n', ':BufferLineCycleNext<CR>', {})
+
+-- Remap Esc to leave terminal
+keymap.set("t", "<Esc>", "<C-\\><C-n>", {})

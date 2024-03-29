@@ -39,6 +39,7 @@ return {
 				"pyright",
 				"jsonls",
 				"clangd",
+				"bashls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -52,6 +53,7 @@ return {
 				"black", -- python formatter
 				"ruff", -- python linter
 				"eslint_d", -- js linter
+				"shellcheck", -- bash linter
 			},
 		})
 	end,
