@@ -4,6 +4,8 @@ return {
 	config = function()
 		local configs = require("nvim-treesitter.configs")
 
+		-- Hmm is this from luals? or from a linter?
+		---@diagnostic disable: missing-fields
 		configs.setup({
 			ensure_installed = {
 				"c",
@@ -33,5 +35,6 @@ return {
 			highlight = { enable = true },
 			indent = { enable = true },
 		})
+		---@diagnostic enable: missing-fields
 	end,
 }
