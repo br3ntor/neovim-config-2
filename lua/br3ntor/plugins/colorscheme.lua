@@ -7,7 +7,7 @@ return {
 			require("tokyonight").setup({
 				styles = { comments = { italic = false }, keywords = { italic = false } },
 				on_colors = function(colors)
-					colors.bg = "#11121A"
+					colors.bg = "#0A0B0F"
 				end,
 			})
 			-- load the colorscheme here
