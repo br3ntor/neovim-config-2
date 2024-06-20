@@ -140,7 +140,7 @@ return {
 			on_attach = on_attach,
 			settings = {
 				pyright = {
-					typeCheckingMode = "off",
+					typeCheckingMode = "basic",
 				},
 			},
 		})

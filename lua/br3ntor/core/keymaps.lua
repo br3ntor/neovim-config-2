@@ -9,7 +9,9 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 -- Open netrw, the vim file explorer
 -- Hmmm I don't know which way I prefer
 -- keymap.set("n", "<leader>e", vim.cmd.Explore)
-keymap.set("n", "<leader>e", ":Explore<CR>")
+-- keymap.set("n", "<leader>e", ":Explore<CR>")
+-- Got sick/frustrated with netrw so nvim-tree now
+keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
 
 -- Buffer controls
 keymap.set("n", "<leader>b", "<cmd>buffers<CR>:buffer<Space>", { desc = "Open buffers and prompt choice" })
