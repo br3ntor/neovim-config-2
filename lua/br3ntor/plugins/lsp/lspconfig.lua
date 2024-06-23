@@ -186,5 +186,15 @@ return {
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
+
+		--congure eslint-lsp
+		lspconfig["eslint"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		-- setting diagnostic to show source on floating window
+		-- should these be set after these setups? I'm not sure, nvim config so confusing to me :'(
+		vim.diagnostic.config({ float = { source = true } })
 	end,
 }

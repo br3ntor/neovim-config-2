@@ -40,6 +40,7 @@ return {
 				"jsonls",
 				"clangd",
 				"bashls",
+				"eslint",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -52,7 +53,7 @@ return {
 				"isort", -- python formatter
 				"black", -- python formatter
 				"ruff", -- python linter
-				"eslint_d", -- js linter
+				-- "eslint_d", -- js linter
 				"shellcheck", -- bash linter
 			},
 		})
