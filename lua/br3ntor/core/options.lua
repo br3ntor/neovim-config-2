@@ -44,3 +44,15 @@ opt.swapfile = false
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- disable line numbers for terminal
+-- Turn off line numbers in terminal mode
+vim.api.nvim_create_augroup("TerminalSettings", { clear = true })
+vim.api.nvim_create_autocmd("TermOpen", {
+	group = "TerminalSettings",
+	pattern = "*",
+	callback = function()
+		vim.opt_local.number = false
+		vim.opt_local.relativenumber = false
+	end,
+})
