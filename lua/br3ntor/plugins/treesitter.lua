@@ -29,6 +29,7 @@ return {
 				"gitignore",
 				"query",
 				"python",
+				"go",
 			},
 
 			sync_install = false,
