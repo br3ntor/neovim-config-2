@@ -4,7 +4,6 @@ return {
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
 		{ "antosha417/nvim-lsp-file-operations", config = true },
-		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
 		-- import lspconfig plugin
@@ -135,6 +134,7 @@ return {
 		})
 
 		-- configure python server
+		local util = require("lspconfig.util")
 		lspconfig["pyright"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,

@@ -14,7 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 
 require("lazy").setup({
-	-- Not sure if I want these, look into them later
+	-- neoconf.nvim is a Neovim plugin to manage global and project-local settings.
+	-- Haven't wanted these yet but could be nice later on
 	-- { "folke/neoconf.nvim", cmd = "Neoconf" },
 
 	{ import = "br3ntor.plugins" },
