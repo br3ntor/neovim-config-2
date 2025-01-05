@@ -79,7 +79,8 @@ return {
 		})
 
 		-- configure typescript server with plugin
-		lspconfig["tsserver"].setup({
+		-- lspconfig["tsserver"].setup({
+		lspconfig["ts_ls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})
@@ -195,6 +196,12 @@ return {
 
 		--congure gopls
 		lspconfig["gopls"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+		})
+
+		--configure sqls
+		lspconfig["sqls"].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 		})

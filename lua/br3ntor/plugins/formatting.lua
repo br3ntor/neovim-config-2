@@ -20,11 +20,19 @@ return {
 				graphql = { "prettier" },
 				lua = { "stylua" },
 				python = { "isort", "black" },
+				sql = { "sql-formatter" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
 				async = false,
 				timeout_ms = 1000,
+			},
+			formatters = {
+				["sql-formatter"] = {
+					command = "sql-formatter",
+					args = { "--language", "sql" }, -- Adjust the language if needed
+					stdin = true,
+				},
 			},
 		})
 

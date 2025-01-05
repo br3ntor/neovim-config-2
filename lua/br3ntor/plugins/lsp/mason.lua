@@ -27,7 +27,8 @@ return {
 		mason_lspconfig.setup({
 			-- list of servers for mason to install
 			ensure_installed = {
-				"tsserver",
+				-- "tsserver",
+				"ts_ls",
 				"html",
 				"cssls",
 				"tailwindcss",
@@ -42,6 +43,7 @@ return {
 				"bashls",
 				"eslint",
 				"gopls",
+				"sqls",
 			},
 			-- auto-install configured servers (with lspconfig)
 			automatic_installation = true, -- not the same as ensure_installed
@@ -56,6 +58,7 @@ return {
 				"ruff", -- python linter
 				-- "eslint_d", -- js linter
 				"shellcheck", -- bash linter
+				"sql-formatter",
 			},
 		})
 	end,

@@ -25,3 +25,16 @@ keymap.set("n", "<leader>q", ":bdelete<CR>", {})
 
 -- Remap Esc to leave terminal
 keymap.set("t", "<Esc>", "<C-\\><C-n>", {})
+
+-- Function to close all buffers except the current one
+local function close_other_buffers()
+	local current_buf = vim.api.nvim_get_current_buf()
+	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+		if buf ~= current_buf and vim.api.nvim_buf_is_loaded(buf) then
+			vim.api.nvim_buf_delete(buf, { force = true })
+		end
+	end
+end
+
+-- Key mapping to call the function
+vim.api.nvim_set_keymap("n", "<leader>bd", ":lua close_other_buffers()<CR>", { noremap = true, silent = true })
