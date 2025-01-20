@@ -11,3 +11,5 @@ Dependencies from a fresh debian install:
 - node,npm
 - think i need pip3 too
 - oh yea and apt install python3.11-venv
+- typescript setup needs some install
+  https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#ts_ls
