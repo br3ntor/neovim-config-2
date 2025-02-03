@@ -1,31 +1,36 @@
 return {
 	{
-		"sainnhe/gruvbox-material",
-		lazy = false,
-		priority = 1000,
+		"folke/tokyonight.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
 		config = function()
-			vim.g.gruvbox_material_background = "hard"
-			vim.g.gruvbox_material_foreground = "mix"
-			vim.g.gruvbox_material_enable_italic = true
-			vim.g.gruvbox_material_better_performance = 1
-			vim.g.gruvbox_material_transparent_background = 1
-			vim.cmd.colorscheme("gruvbox-material")
+			require("tokyonight").setup({
+				styles = { comments = { italic = false }, keywords = { italic = false } },
+				on_colors = function(colors)
+					colors.bg = "#0A0B0F"
+				end,
+			})
+			-- load the colorscheme here
+			vim.cmd([[colorscheme tokyonight-night]])
+			vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "#0A0B0F" })
+			vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "#0A0B0F" })
 		end,
 	},
-
 	-- {
-	-- 	"folke/tokyonight.nvim",
-	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
-	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	"sainnhe/gruvbox-material",
+	-- 	lazy = false,
+	-- 	priority = 1000,
 	-- 	config = function()
-	-- 		require("tokyonight").setup({
-	-- 			styles = { comments = { italic = false }, keywords = { italic = false } },
-	-- 			on_colors = function(colors)
-	-- 				colors.bg = "#0A0B0F"
-	-- 			end,
-	-- 		})
-	-- 		-- load the colorscheme here
-	-- 		vim.cmd([[colorscheme tokyonight-night]])
+	-- 		vim.g.gruvbox_material_background = "hard"
+	-- 		vim.g.gruvbox_material_foreground = "mix"
+	-- 		vim.g.gruvbox_material_enable_italic = true
+	-- 		vim.g.gruvbox_material_better_performance = 1
+	-- 		vim.g.gruvbox_material_colors_override = {
+	-- 			bg0 = { "#0A0B0F", "234" }, -- Custom dark blue-gray background
+	-- 			-- bg1 = { "#1A1B1F", "235" }, -- Slightly lighter variant
+	-- 			-- bg2 = { "#2A2B2F", "237" }, -- Even lighter variant
+	-- 		}
+	-- 		vim.cmd.colorscheme("gruvbox-material")
 	-- 	end,
 	-- },
 	-- {
