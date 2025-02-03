@@ -1,20 +1,33 @@
 return {
 	{
-		"folke/tokyonight.nvim",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
+		"sainnhe/gruvbox-material",
+		lazy = false,
+		priority = 1000,
 		config = function()
-			require("tokyonight").setup({
-				styles = { comments = { italic = false }, keywords = { italic = false } },
-				on_colors = function(colors)
-					colors.bg = "#0A0B0F"
-				end,
-			})
-			-- load the colorscheme here
-			vim.cmd([[colorscheme tokyonight-night]])
+			vim.g.gruvbox_material_background = "hard"
+			vim.g.gruvbox_material_foreground = "mix"
+			vim.g.gruvbox_material_enable_italic = true
+			vim.g.gruvbox_material_better_performance = 1
+			vim.g.gruvbox_material_transparent_background = 1
+			vim.cmd.colorscheme("gruvbox-material")
 		end,
 	},
 
+	-- {
+	-- 	"folke/tokyonight.nvim",
+	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
+	-- 	priority = 1000, -- make sure to load this before all the other start plugins
+	-- 	config = function()
+	-- 		require("tokyonight").setup({
+	-- 			styles = { comments = { italic = false }, keywords = { italic = false } },
+	-- 			on_colors = function(colors)
+	-- 				colors.bg = "#0A0B0F"
+	-- 			end,
+	-- 		})
+	-- 		-- load the colorscheme here
+	-- 		vim.cmd([[colorscheme tokyonight-night]])
+	-- 	end,
+	-- },
 	-- {
 	-- 	"rebelot/kanagawa.nvim",
 	-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
