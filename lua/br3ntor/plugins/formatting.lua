@@ -19,7 +19,10 @@ return {
 				markdown = { "prettier" },
 				graphql = { "prettier" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
+				python = {
+					"isort",
+					"black",
+				},
 				sql = { "sql-formatter" },
 			},
 			format_on_save = {

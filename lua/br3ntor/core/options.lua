@@ -66,3 +66,19 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.expandtab = true
 	end,
 })
+
+-- Clear any existing CursorLine settings
+vim.api.nvim_create_autocmd("WinEnter", {
+	callback = function()
+		vim.opt_local.cursorline = true
+	end,
+})
+
+vim.api.nvim_create_autocmd("WinLeave", {
+	callback = function()
+		vim.opt_local.cursorline = false
+	end,
+})
+
+-- views can only be fully collapsed with the global statusline
+vim.opt.laststatus = 3
