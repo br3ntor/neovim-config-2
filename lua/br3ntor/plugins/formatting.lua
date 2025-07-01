@@ -24,6 +24,8 @@ return {
 					"black",
 				},
 				sql = { "sql-formatter" },
+				c = { "clang-format" },
+				cpp = { "clang-format" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
@@ -35,6 +37,9 @@ return {
 					command = "sql-formatter",
 					args = { "--language", "sql" }, -- Adjust the language if needed
 					stdin = true,
+				},
+				["clang-format"] = {
+					args = { "--style={IndentWidth: 4, BasedOnStyle: llvm}" },
 				},
 			},
 		})

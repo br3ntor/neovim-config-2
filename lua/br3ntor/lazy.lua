@@ -21,6 +21,3 @@ require("lazy").setup({
 	{ import = "br3ntor.plugins" },
 	{ import = "br3ntor.plugins.lsp" },
 })
-
--- Trying to get the definition annotation to have color, try a diff scheme maybe
--- vim.api.nvim_create_augroup()

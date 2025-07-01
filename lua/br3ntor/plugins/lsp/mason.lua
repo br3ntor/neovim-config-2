@@ -59,6 +59,7 @@ return {
 				-- "eslint_d", -- js linter
 				"shellcheck", -- bash linter
 				"sql-formatter",
+				"clang-format",
 			},
 		})
 	end,
