@@ -26,8 +26,7 @@ return {
 				"gopls",
 				"sqls",
 			},
-			automatic_installation = true,
-			automatic_enable = true,
+			automatic_enable = false,
 		})
 
 		require("mason-tool-installer").setup({
