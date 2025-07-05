@@ -39,50 +39,45 @@ return {
 			end
 		end
 
-		vim.lsp.config("*", {
-			on_attach = on_attach,
-			capabilities = capabilities,
-		})
+		local lspconfig = require("lspconfig")
 
-		-- Setup servers:
-		vim.lsp.config("lua_ls", {
-			on_attach = on_attach,
-			capabilities = capabilities,
-			settings = {
-				Lua = {
-					completion = { callSnippet = "Replace" },
-					diagnostics = { globals = { "vim" } },
-					workspace = {
-						library = {
-							[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-							[vim.fn.stdpath("config") .. "/lua"] = true,
+		local servers = {
+			clangd = {},
+			lua_ls = {
+				settings = {
+					Lua = {
+						completion = { callSnippet = "Replace" },
+						diagnostics = { globals = { "vim" } },
+						workspace = {
+							library = {
+								[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+								[vim.fn.stdpath("config") .. "/lua"] = true,
+							},
 						},
 					},
 				},
 			},
-		})
-
-		vim.lsp.config("pyright", {
-			on_attach = on_attach,
-			capabilities = capabilities,
-			settings = {
-				pyright = {
-					typeCheckingMode = "basic",
+			pyright = {
+				settings = {
+					pyright = {
+						typeCheckingMode = "basic",
+					},
 				},
 			},
-		})
+			graphql = {
+				filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
+			},
+			emmet_ls = {
+				filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
+			},
+			svelte = {},
+		}
 
-		vim.lsp.config("graphql", {
-			on_attach = on_attach,
-			capabilities = capabilities,
-			filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-		})
-
-		vim.lsp.config("emmet_ls", {
-			on_attach = on_attach,
-			capabilities = capabilities,
-			filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-		})
+		for server, config in pairs(servers) do
+			config.on_attach = on_attach
+			config.capabilities = capabilities
+			lspconfig[server].setup(config)
+		end
 
 		-- Diagnostics UI config
 		vim.diagnostic.config({
