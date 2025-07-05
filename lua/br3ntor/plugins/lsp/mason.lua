@@ -39,6 +39,7 @@ return {
 				"ruff",
 				"shellcheck",
 				"sql-formatter",
+				"clang-format",
 			},
 		})
 	end,
