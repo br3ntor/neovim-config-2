@@ -43,6 +43,7 @@ return {
 		local lspconfig = require("lspconfig")
 
 		local servers = {
+			ts_ls = {},
 			clangd = {},
 			lua_ls = {
 				settings = {
