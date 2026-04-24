@@ -22,8 +22,16 @@ return {
 			keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 			keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
 			keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
-			keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-			keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+			-- keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+			-- keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+			vim.keymap.set("n", "[d", function()
+				vim.diagnostic.jump({ count = -1 })
+			end, opts)
+
+			vim.keymap.set("n", "]d", function()
+				vim.diagnostic.jump({ count = 1 })
+			end, opts)
+
 			keymap.set("n", "K", vim.lsp.buf.hover, opts)
 			keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
 

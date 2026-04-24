@@ -31,5 +31,9 @@ return {
 
 		vim.keymap.set("n", "<leader>fr", builtin.oldfiles, {})
 		vim.keymap.set("n", "<leader>fc", builtin.grep_string, {})
+		vim.keymap.set("n", "<leader>fw", function()
+			local word = vim.fn.expand("<cword>")
+			require("telescope.builtin").live_grep({ default_text = word })
+		end, { desc = "Live grep for word under cursor" })
 	end,
 }

@@ -39,6 +39,7 @@ return {
 				"shellcheck",
 				"sql-formatter",
 				"clang-format",
+				"yamllint",
 			},
 		})
 	end,
