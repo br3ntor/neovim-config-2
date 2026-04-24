@@ -20,4 +20,8 @@ require("lazy").setup({
 
 	{ import = "br3ntor.plugins" },
 	{ import = "br3ntor.plugins.lsp" },
+
+	rocks = {
+		hererocks = false,
+	},
 })

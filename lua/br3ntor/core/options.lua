@@ -44,6 +44,8 @@ opt.swapfile = false
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
 
 -- disable line numbers for terminal
 -- Turn off line numbers in terminal mode
