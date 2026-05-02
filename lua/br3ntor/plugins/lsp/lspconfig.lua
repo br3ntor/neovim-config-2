@@ -62,20 +62,20 @@ return {
 				local opts = { noremap = true, silent = true, buffer = ev.buf }
 				local keymap = vim.keymap
 
-				keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-				keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-				keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
-				keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+				keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration", buffer = ev.buf })
+				keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { desc = "Go to definition", buffer = ev.buf })
+				keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Buffer diagnostics", buffer = ev.buf })
+				keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Line diagnostics", buffer = ev.buf })
 
 				keymap.set("n", "[d", function()
 					vim.diagnostic.jump({ count = -1 })
-				end, opts)
+				end, { desc = "Previous diagnostic", buffer = ev.buf })
 
 				keymap.set("n", "]d", function()
 					vim.diagnostic.jump({ count = 1 })
-				end, opts)
+				end, { desc = "Next diagnostic", buffer = ev.buf })
 
-				keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts)
+				keymap.set("n", "<leader>rs", ":LspRestart<CR>", { desc = "Restart LSP", buffer = ev.buf })
 
 				local client = vim.lsp.get_client_by_id(ev.data.client_id)
 				if client and client.name == "svelte" then

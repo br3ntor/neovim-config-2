@@ -84,3 +84,35 @@ vim.api.nvim_create_autocmd("WinLeave", {
 
 -- views can only be fully collapsed with the global statusline
 vim.opt.laststatus = 3
+
+-- clipboard integration
+opt.clipboard = "unnamedplus"
+
+-- persistent undo
+opt.undofile = true
+
+-- mouse support
+opt.mouse = "a"
+
+-- faster CursorHold
+opt.updatetime = 250
+
+-- faster which-key response
+opt.timeoutlen = 300
+
+-- keep cursor centered vertically
+opt.scrolloff = 8
+
+-- keep cursor centered horizontally
+opt.sidescrolloff = 8
+
+-- search settings
+opt.hlsearch = true
+opt.incsearch = true
+
+-- live substitute preview
+opt.inccommand = "split"
+
+-- show invisible characters
+opt.list = true
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }

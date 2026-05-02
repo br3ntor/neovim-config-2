@@ -11,20 +11,20 @@ local keymap = vim.keymap -- for conciseness
 -- keymap.set("n", "<leader>e", vim.cmd.Explore)
 -- keymap.set("n", "<leader>e", ":Explore<CR>")
 -- Got sick/frustrated with netrw so nvim-tree now
-keymap.set("n", "<leader>e", ":NvimTreeOpen<CR>")
+keymap.set("n", "<leader>e", ":NvimTreeOpen<CR>", { desc = "Open file tree" })
 
 -- Buffer controls
 keymap.set("n", "<leader>b", "<cmd>buffers<CR>:buffer<Space>", { desc = "Open buffers and prompt choice" })
-keymap.set("n", "<leader>p", ":bprevious<CR>", {})
-keymap.set("n", "<leader>n", ":bnext<CR>", {})
-keymap.set("n", "<leader>q", ":bdelete<CR>", {})
+keymap.set("n", "<leader>p", ":bprevious<CR>", { desc = "Previous buffer" })
+keymap.set("n", "<leader>n", ":bnext<CR>", { desc = "Next buffer" })
+keymap.set("n", "<leader>q", ":bdelete<CR>", { desc = "Delete buffer" })
 
 -- These are for bufferline plugin, trying all natural atm
 --vim.keymap.set('n', '<leader>p', ':BufferLineCyclePrev<CR>', {})
 --vim.keymap.set('n', '<leader>n', ':BufferLineCycleNext<CR>', {})
 
 -- Remap Esc to leave terminal
-keymap.set("t", "<Esc>", "<C-\\><C-n>", {})
+keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- Function to close all buffers except the current one
 local function close_other_buffers()
@@ -37,4 +37,4 @@ local function close_other_buffers()
 end
 
 -- Key mapping to call the function
-vim.api.nvim_set_keymap("n", "<leader>bd", ":lua close_other_buffers()<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>bd", close_other_buffers, { desc = "Close other buffers" })
