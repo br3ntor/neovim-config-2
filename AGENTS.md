@@ -34,12 +34,6 @@ These must be installed outside Neovim (from README):
 - python3 + venv (pyright, ruff, etc.)
 - make (telescope-fzf-native build)
 
-## Avante.nvim
-
-- Currently `enabled = false`
-- Uses a custom Ollama vendor pointing to `http://192.168.0.212:11434` with `qwen2.5-coder:7b`
-- Build step is `make` (from source)
-
 ## Svelte LSP Quirk
 
 The svelte LSP needs `$/onDidChangeTsOrJsFile` notification on JS/TS file saves to stay in sync — handled via LspAttach autocmd in `lspconfig.lua`.
