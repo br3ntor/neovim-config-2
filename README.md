@@ -14,6 +14,12 @@ These must be installed before first use:
 | `node` + `npm` | LSP servers (ts_ls, etc.) |
 | `python3` + `venv` | pyright, ruff, etc. |
 | `make` | telescope-fzf-native build |
+| `go` (≥1.22) | Required for `gopls` LSP (Mason uses `go install` to set up `gopls`) |
+
+> **Note:** Go 1.22+ is required. Older distribution packages (e.g., Ubuntu 22.04, Debian 12) may not meet this requirement. Install via your preferred method:
+> - [Official binary](https://go.dev/doc/install) (recommended for latest version)
+> - Distribution package manager (if version ≥1.22)
+> - Version manager (e.g., `mise`)
 
 ## Quick Setup
 

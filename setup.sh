@@ -68,9 +68,12 @@ case $OS in
         echo "  - nodejs and npm"
         echo "  - python3 and venv"
         echo "  - make"
+        echo "  - go (≥1.22)"
         exit 1
         ;;
 esac
+
+echo -e "${YELLOW}NOTE: Go 1.22+ is required for gopls LSP. Install via: https://go.dev/doc/install${NC}"
 
 echo ""
 echo -e "${GREEN}System dependencies installed successfully!${NC}"
