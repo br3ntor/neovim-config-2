@@ -51,6 +51,7 @@ return {
 			"emmet_ls",
 			"svelte",
 			"tailwindcss",
+			"yamlls",
 		}
 
 		for _, server in ipairs(servers) do
@@ -63,8 +64,18 @@ return {
 				local keymap = vim.keymap
 
 				keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Go to declaration", buffer = ev.buf })
-				keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", { desc = "Go to definition", buffer = ev.buf })
-				keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", { desc = "Buffer diagnostics", buffer = ev.buf })
+				keymap.set(
+					"n",
+					"gd",
+					"<cmd>Telescope lsp_definitions<CR>",
+					{ desc = "Go to definition", buffer = ev.buf }
+				)
+				keymap.set(
+					"n",
+					"<leader>D",
+					"<cmd>Telescope diagnostics bufnr=0<CR>",
+					{ desc = "Buffer diagnostics", buffer = ev.buf }
+				)
 				keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Line diagnostics", buffer = ev.buf })
 
 				keymap.set("n", "[d", function()

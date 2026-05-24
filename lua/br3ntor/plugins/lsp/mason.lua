@@ -25,6 +25,7 @@ return {
 				"eslint",
 				"gopls",
 				"sqls",
+				"yamlls",
 			},
 			automatic_enable = false,
 		})
